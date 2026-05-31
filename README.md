@@ -149,3 +149,7 @@ If you find CopilotOnToast useful, consider supporting its development:
 ## License
 
 [MIT](LICENSE)
+
+---
+
+> **CopilotOnToast is an independent, community-created project by [melodiouscode](https://melodiouscode.net) and is not affiliated with, endorsed by, or an official product of GitHub or Microsoft.** The GitHub Copilot name and logo are trademarks of their respective owners.
