@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  site: 'https://melodiouscoders.github.io/CopilotOnToast',
-  base: '/CopilotOnToast',
+  site: 'https://copilot-on-toast.melodiouscode.net',
+  base: '/',
   integrations: [
     starlight({
       title: 'CopilotOnToast 🍞',
