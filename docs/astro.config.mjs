@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/',
   integrations: [
     starlight({
-      title: 'CopilotOnToast 🍞',
+      title: 'Copilot On Toast 🍞',
       description: 'Desktop toast notifications for GitHub Copilot CLI — get notified when your agent finishes, needs approval, hits an error, and more.',
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/melodiouscoders/CopilotOnToast' },
