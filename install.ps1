@@ -22,7 +22,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$version  = 'v1.0.0'
+$version  = 'v1.0.1'
 $baseUrl  = "https://raw.githubusercontent.com/melodiouscoders/CopilotOnToast/$version"
 $hookFiles  = @('copilot-on-toast.json', 'copilot-on-toast.ps1', 'copilot-on-toast.config.json', 'copilot-icon.png')
 $skillFiles = @('SKILL.md')

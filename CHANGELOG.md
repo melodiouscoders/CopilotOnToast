@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.0.1] - 2026-05-31
+
+### Fixed
+
+- Install script now installs the `/toast` skill (`SKILL.md`) into `.github/skills/toast/` in addition to the hook files
+
+---
+
 ## [1.0.0] - 2026-05-31
 
 ### Added
