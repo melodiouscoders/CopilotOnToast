@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate hooks
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate copilot-on-toast.json is valid JSON
+        shell: pwsh
+        run: |
+          $json = Get-Content .github/hooks/copilot-on-toast.json -Raw | ConvertFrom-Json
+          if (-not $json.version) { throw "Missing 'version' field in hooks JSON" }
+          if (-not $json.hooks)   { throw "Missing 'hooks' field in hooks JSON" }
+          Write-Host "hooks JSON is valid. Hooks defined: $($json.hooks.PSObject.Properties.Name -join ', ')"
+
+      - name: Check PowerShell script syntax
+        shell: pwsh
+        run: |
+          $errors = $null
+          $null = [System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path .github/hooks/copilot-on-toast.ps1).Path,
+            [ref]$null,
+            [ref]$errors
+          )
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.Message }
+            throw "Syntax errors found in copilot-on-toast.ps1"
+          }
+          Write-Host "copilot-on-toast.ps1 syntax is valid."
+
+      - name: Check install.ps1 syntax
+        shell: pwsh
+        run: |
+          $errors = $null
+          $null = [System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path install.ps1).Path,
+            [ref]$null,
+            [ref]$errors
+          )
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.Message }
+            throw "Syntax errors found in install.ps1"
+          }
+          Write-Host "install.ps1 syntax is valid."

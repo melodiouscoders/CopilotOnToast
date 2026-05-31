@@ -1,0 +1,11 @@
+{
+  "notifications": {
+    "sessionStart":        true,
+    "sessionEnd":          true,
+    "agentStop":           true,
+    "permissionRequest":   true,
+    "errorOccurred":       true,
+    "userPromptSubmitted": true,
+    "postToolUseFailure":  true
+  }
+}

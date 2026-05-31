@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot' 'Session started' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "sessionStart" }
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot' 'Session ended' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "sessionEnd" }
+      }
+    ],
+    "agentStop": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot' 'Agent turn complete' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "agentStop" }
+      }
+    ],
+    "errorOccurred": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot - Error' 'An error occurred' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "errorOccurred" }
+      }
+    ],
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot' 'Prompt submitted' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "userPromptSubmitted" }
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot' 'Action needed' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "preToolUse" }
+      }
+    ],
+    "permissionRequest": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot - Action Needed' 'Approval required' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "permissionRequest" }
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "type": "command",
+        "bash": "notify-send 'Copilot - Tool Failed' 'A tool failed' 2>/dev/null || true",
+        "powershell": "pwsh -NoProfile -File ./copilot-on-toast.ps1",
+        "cwd": ".github/hooks",
+        "timeoutSec": 10,
+        "env": { "COPILOT_HOOK_EVENT": "postToolUseFailure" }
+      }
+    ]
+  }
+}
