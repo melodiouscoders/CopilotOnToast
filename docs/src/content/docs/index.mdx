@@ -1,0 +1,34 @@
+---
+title: CopilotOnToast
+description: Desktop toast notifications for GitHub Copilot CLI — get notified when your agent finishes, needs approval, hits an error, and more.
+template: splash
+hero:
+  tagline: Walk away while Copilot works. Get notified the moment it's done — or when it needs you.
+  image:
+    file: ../../assets/copilot-icon.png
+  actions:
+    - text: Get Started
+      link: /CopilotOnToast/getting-started/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/melodiouscoders/CopilotOnToast
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Never miss a response" icon="approve-check">
+    Walk away from your terminal while Copilot works and get a desktop notification the moment it finishes.
+  </Card>
+  <Card title="Action alerts" icon="warning">
+    Get notified instantly when Copilot needs your approval before it can continue.
+  </Card>
+  <Card title="One-line install" icon="rocket">
+    A single PowerShell command installs everything into your repo in seconds.
+  </Card>
+  <Card title="Fully configurable" icon="setting">
+    Enable, disable, and customise notifications per event — or manage settings conversationally with `/toast`.
+  </Card>
+</CardGrid>
