@@ -23,7 +23,7 @@ CopilotOnToast registers seven Copilot CLI hook events. This page describes each
 This is the most useful event for "done" alerts — it fires whenever the agent finishes a turn and is waiting for your input. If you only want one notification enabled, this is the one.
 
 ### `permissionRequest`
-Fires when Copilot needs your approval before using a tool. This fires **before** the permission service runs, so it fires even in `/yolo` mode. See [Yolo mode tip](/CopilotOnToast/guides/configuration/#yolo-mode-tip) to disable it for yolo sessions.
+Fires when Copilot needs your approval before using a tool. This fires **before** the permission service runs, so it fires even in `/yolo` mode. See [Yolo mode tip](/guides/configuration/#yolo-mode-tip) to disable it for yolo sessions.
 
 ### `sessionEnd`
 The notification body includes the session end reason (e.g., `user_ended`, `timeout`).
