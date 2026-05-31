@@ -8,9 +8,9 @@ export default defineConfig({
     starlight({
       title: 'CopilotOnToast 🍞',
       description: 'Desktop toast notifications for GitHub Copilot CLI — get notified when your agent finishes, needs approval, hits an error, and more.',
-      social: {
-        github: 'https://github.com/melodiouscoders/CopilotOnToast',
-      },
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/melodiouscoders/CopilotOnToast' },
+      ],
       editLink: {
         baseUrl: 'https://github.com/melodiouscoders/CopilotOnToast/edit/main/docs/',
       },
